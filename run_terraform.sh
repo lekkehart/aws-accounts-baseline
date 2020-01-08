@@ -13,6 +13,7 @@ fi
 WORKSPACES=(
   test2-group1-dev
   test2-group2-dev
+  test2-group3-dev
 )
 
 ############################################################

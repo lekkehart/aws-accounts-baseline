@@ -5,6 +5,7 @@ variable "aws_account_ids" {
   default = {
     test2-group1-dev = "025262048239"
     test2-group2-dev = "323133235112"
+    test2-group3-dev = "741400989864"
   }
 }
 
@@ -29,6 +30,15 @@ variable "workspace_configs" {
       s3_one = {
         s3_bucket   = "yes"
         s3_bucket_1 = "no"
+      }
+      s3_two = {
+        s3_bucket = "yes"
+      }
+    }
+    test2-group3-dev = {
+      s3_one = {
+        s3_bucket   = "yes"
+        s3_bucket_1 = "yes"
       }
       s3_two = {
         s3_bucket = "yes"

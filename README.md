@@ -65,7 +65,7 @@ _NOTE!: Terraform workspace names must not include `+`. Therefore, use `-` inste
     Create a workspace for the new account. Otherwise, the Travis pipeline will fail. 
     
     ```
-    $ terraform.exe workspace new test2-xxx-yyy
+    $ terraform workspace new test2-xxx-yyy
     Created and switched to workspace "test2-xxx-yyy"!
     
     You're now on a new, empty workspace. Workspaces isolate their state,
@@ -96,7 +96,7 @@ _NOTE!: Terraform workspace names must not include `+`. Therefore, use `-` inste
     
       default = {
         ...
-        test2+xxx+yyy = 123456789012      
+        test2-xxx-yyy = 123456789012      
         ...
       }
     }
