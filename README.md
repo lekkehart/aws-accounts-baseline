@@ -15,7 +15,7 @@ The project demonstrates:
   *  Module [s3_one](modules/s3_one/main.tf).
   *  Module [s3_two](modules/s3_two/main.tf).
   *  Module [cloudtrail-baseline](modules/security-baseline/cloudtrail-baseline/main.tf).
-* The map structure `workspace_configs` in [variable.tf](variables.tf) controls which features are to be enabled in 
+* The map structure `workspace_configs` in [workspace_configs.tf](workspace_configs.tf) controls which features are to be enabled in 
   which accounts. 
 * It uses Terraform's `workspace` feature which creates a separate `tfstate` file for each AWS account.
   This reduces blast radius and allows to apply changes initially to a single AWS account before rolling it out to all
@@ -73,7 +73,7 @@ _NOTE!: Terraform workspace names must not include `+`. Therefore, use `-` inste
     for this configuration.
     ```
   
-1. Add account to `run_terraform.sh`
+1. Add account to [run_terraform.sh](run_terraform.sh)
 
     `run_terraform.sh` is used by the Travis pipelines for looping over all AWS accounts.
 
@@ -85,7 +85,7 @@ _NOTE!: Terraform workspace names must not include `+`. Therefore, use `-` inste
     )
     ```
 
-1. Add account to `variables.tf` - `variable "aws_account_ids"`
+1. Add account to [workspace_configs.tf](workspace_configs.tf) - variable `aws_account_ids`
 
     Add account and respective account ID which was received as output from [aws-config](https://github.com/ekklot/aws-config).
 
@@ -102,7 +102,7 @@ _NOTE!: Terraform workspace names must not include `+`. Therefore, use `-` inste
     }
     ```
 
-1. Add account to `variables.tf` - `variable "workspace_configs"`
+1. Add account to [workspace_configs.tf](workspace_configs.tf) - variable `workspace_configs`
 
     Add the account specific configuration, e.g. enable/disable functionality in the modules.
 

@@ -6,8 +6,8 @@ ACTION=$@
 
 if [[ -z $ACTION ]];
 then
-    echo `date`" - Missing mandatory arguments: ACTION. "
-    exit 1
+  echo `date`" - Missing mandatory arguments: ACTION. "
+  exit 1
 fi
 
 WORKSPACES=(
@@ -19,17 +19,17 @@ WORKSPACES=(
 # Functions
 ############################################################
 die () {
-    echo >&2 "$@"
-    exit 1
+  echo >&2 "$@"
+  exit 1
 }
 
 run_command() {
   local COMMAND=$1
   [ -n "$COMMAND" ] || die "=== FAILED: Missing argument for run_command()"
 
-	echo "=== Executing: $COMMAND"
-	$COMMAND
-  [ "$?" -ne 1 ] || die "=== FAILED: $COMMAND"
+  echo "=== Executing: $COMMAND"
+  $COMMAND
+  [ "$?" -eq 0 ] || die "=== FAILED: $COMMAND"
 }
 
 ############################################################
