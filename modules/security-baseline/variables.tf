@@ -16,5 +16,19 @@ variable "audit_cloudtrail_s3_bucket_name" {
 
 variable "terraform_tags" {
   description = "The map of default tags which is used for tagging resources created by this script."
-  type = map(string)
+  type = map
+}
+
+# --------------------------------------------------------------------------------------------------
+# Variables for alarm-baseline module.
+# --------------------------------------------------------------------------------------------------
+
+variable "alarm_namespace" {
+  description = "The namespace in which all alarms are set up."
+  default     = "CISBenchmark"
+}
+
+variable "alarm_sns_topic_name" {
+  description = "The name of the SNS Topic which will be notified when any alarm is performed."
+  default     = "CISAlarm"
 }
