@@ -17,7 +17,7 @@ module "cloudtrail_baseline" {
 module "alarm_baseline" {
   source = "./alarm-baseline"
 
-  alarm_namespace           = "${var.alarm_namespace}"
-  cloudtrail_log_group_name = "${module.cloudtrail_baseline.log_group_name}"
-  sns_topic_name            = "${var.alarm_sns_topic_name}"
+  alarm_namespace           = var.alarm_namespace
+  cloudtrail_log_group_name = module.cloudtrail_baseline.log_group_name
+  sns_topic_name            = var.alarm_sns_topic_name
 }
