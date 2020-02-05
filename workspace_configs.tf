@@ -32,7 +32,7 @@ variable "workspace_configs" {
         s3_bucket_1 = "no"
       }
       s3_two = {
-        s3_bucket = "yes"
+        s3_bucket = "no"
       }
     }
     test2-group3-dev = {

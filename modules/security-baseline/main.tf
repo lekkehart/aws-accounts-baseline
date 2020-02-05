@@ -21,3 +21,10 @@ module "alarm_baseline" {
   cloudtrail_log_group_name = module.cloudtrail_baseline.log_group_name
   sns_topic_name            = var.alarm_sns_topic_name
 }
+
+# --------------------------------------------------------------------------------------------------
+# Security Hub Baseline
+# --------------------------------------------------------------------------------------------------
+module "securityhub_baseline" {
+  source = "./securityhub-baseline"
+}
